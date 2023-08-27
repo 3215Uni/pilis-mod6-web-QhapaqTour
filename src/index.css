@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Colors */
+  --primary: #F3722C;
+  --secondary: #6F7789;
+  --tertiary: #D9D9D9;
+  --black: #000000;
+  --white: #FFFFFF;
+
+  /* Font family */
+  --font-header: 'Manjari', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+  
+  /* Font sizes */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+  --text-4xl: 36px;
+  --text-5xl: 48px;
+  --text-6xl: 60px;
+
+  /* Font weight */
+  --font-thin: 100;
+  --font-extralight: 200;
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+
+  /* Border radius */
+  --border-radius: 16px;
+  --border-radius-full: 100%;
+
+  /* Shadows */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-header); 
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--secondary);
+}
+
+input, textarea {
+  font-family: var(--font-body);
+  color: var(--black);
+}
