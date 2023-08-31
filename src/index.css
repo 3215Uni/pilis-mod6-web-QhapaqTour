@@ -5,8 +5,6 @@
   --primary: #F3722C;
   --secondary: #6F7789;
   --tertiary: #D9D9D9;
-  --danger: #FF2A51;
-  --danger-light: #FFAABA;
   --black: #000000;
   --white: #FFFFFF;
 
@@ -38,12 +36,10 @@
   --font-black: 900;
 
   /* Border radius */
-  --border-radius: 10px;
+  --border-radius: 16px;
   --border-radius-full: 100%;
 
   /* Shadows */
-  --shadow-01: 0 4px 8px var(--secondary);
-  --shadow-02: 0 0 0 0.25rem rgba(243, 114, 44,.25);
 }
 
 * {
@@ -73,7 +69,7 @@ input::placeholder, textarea::placeholder {
   color: var(--secondary);
 }
 
-input, textarea, button {
+input, textarea {
   font-family: var(--font-body);
   color: var(--black);
 }
