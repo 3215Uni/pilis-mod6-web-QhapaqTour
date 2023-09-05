@@ -1,0 +1,65 @@
+.svg{
+    position: absolute;
+    top: 256px;
+}
+main{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem 0;
+}
+
+.nombre{
+    font-size: 22px;
+    text-align: center;
+    font-weight: 600;
+}
+.lista{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.titulo-formulario{
+    font-weight: 300;
+    margin-bottom: 26px;
+    text-align: center;
+}
+
+.grupo{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom:1rem ;
+}
+
+.grupo label{
+    font-size: 20px;
+    font-weight: 300;
+    color: #6F7789;
+}
+
+.grupo input{
+    width: 330px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #6F7789;
+}
+
+.iconos{
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.icono{
+    width: 134px;
+    height: 112px;
+    background-color: #D9D9D9;
+    border-radius: 12px;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
