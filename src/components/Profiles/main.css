@@ -63,3 +63,30 @@ main{
     text-align: center;
     justify-content: center;
 }
+
+.formulario button {
+    width: 343px;
+    height: 62px;
+    margin-top: 10px;
+    padding: 6px;
+    font-size: var(--text-md);
+    font-weight: var(--font-semibold);
+    color: var(--white);
+    background-color: var(--primary);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-01);
+    cursor: pointer;
+    transition: color .15s ease-in-out;
+}
+
+.formulario button:hover {
+    color: var(--black);
+}
+
+.message-error{
+    padding: 6px 10px;
+    border-radius: var(--border-radius);
+    background-color: var(--danger-light);
+    color: var(--danger);
+}
