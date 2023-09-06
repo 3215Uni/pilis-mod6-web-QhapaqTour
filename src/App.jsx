@@ -1,22 +1,18 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Dashboard, Login, Register } from './pages/index'
-import { ProtectedRoutes } from './pages/ProtectedRoutes'
-import { PublicRoutes } from './pages/PublicRoutes'
+
+import { Dashboard, Home, Login, Navigation, Places, Profile, Register } from './pages/index'
 
 function App () {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route element={<PublicRoutes />}>
-            <Route path='/login' element={<Login/>}/>
-            <Route path='/register' element={<Register/>}/>
-          </Route>
-
-          <Route path='/' element={<ProtectedRoutes />}>
+            <Route index element={<Home/>}/>
+            <Route path='login' element={<Login/>}/>
+            <Route path='register' element={<Register/>}/>
             <Route path='dashboard' element={<Dashboard/>}/>
-            <Route path='profile' element={<Dashboard/>}/>
-          </Route>
+            <Route path='profile' element={<Profile/>}/>
+            <Route path='places' element={<Places/>}/>
         </Routes>
       </BrowserRouter>
     </>

@@ -1,7 +1,11 @@
+import { Header } from "../../components/Profiles/Header"
+import { Main } from "../../components/Profiles/Main"
+
 export const Profile = () => {
   return (
-    <main>
-      <h2>Profile</h2>
-    </main>
+    <>
+    <Header />
+    <Main />
+    </>
   )
 }
