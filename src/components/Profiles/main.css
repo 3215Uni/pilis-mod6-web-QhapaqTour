@@ -87,6 +87,5 @@ main{
 .message-error{
     padding: 6px 10px;
     border-radius: var(--border-radius);
-    background-color: var(--danger-light);
     color: var(--danger);
 }
