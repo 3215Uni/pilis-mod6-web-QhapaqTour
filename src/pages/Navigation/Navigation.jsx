@@ -1,23 +1,13 @@
-import { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import { UserContext } from '../../context/UserContext'
+import { Sidebar } from '../../components/Sidebar/Sidebar'
+import { Header } from '../../components/Header/Header'
+import { Outlet } from 'react-router-dom'
 
 export const Navigation = () => {
-  const { setCurrentUser } = useContext(UserContext)
-
-  const handleLogout = () => {
-    localStorage.removeItem('token')
-    setCurrentUser(null)
-  }
-
   return (
     <>
-      <ul>
-        <li><Link to='/dashboard'>Gana dinero conduciendo</Link></li>
-        <li><Link to='/profile'>Gestionar cuenta</Link></li>
-        <li><Link to='/profile'>Configuración</Link></li>
-        <li><button onClick={handleLogout}>Cerrar sesión</button></li>
-      </ul>
+      <Header/>
+      <Sidebar />
+      <Outlet />
     </>
   )
 }

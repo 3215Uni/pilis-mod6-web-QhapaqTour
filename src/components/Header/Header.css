@@ -1,0 +1,102 @@
+header {
+    background-image: url('../../assets/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 400px;
+}
+
+.header-content {
+    width: 100%;
+    height: 100%;
+    padding: 0 6rem 10rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-avatar {
+    width: 100px;
+    height: 100px;
+}
+
+.title {
+    color: var(--white);
+    font-weight: 400;
+    font-size: 64px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.shape {
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+.button-user {
+    border-radius: var(--border-radius-full);
+    line-height: 0;
+    border: 2px solid var(--primary);
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    z-index: 10;
+    box-shadow: var(--shadow-black);
+}
+
+.dropdown * {
+    font-size: var(--text-base);
+}
+
+.dropdown > div {
+    padding: 10px;
+    border-bottom: 1px solid var(--tertiary);
+    margin-bottom: 10px;
+}
+
+.dropdown > div > p {
+    font-size: var(--text-sm);
+    color: var(--secondary);
+}
+
+.dropdown > li {
+    transition: background-color .15s ease-in-out;
+    border-radius: var(--border-radius);
+}
+
+.dropdown > li > button, .dropdown > li > a {
+    display: block;
+    width: 100%;
+    text-align: start;
+    padding: 5px 10px;
+}
+
+.dropdown > li > button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.dropdown > li:hover {
+    background-color: var(--tertiary);
+}
+
+.opacity-1 {
+    opacity: 1;
+}
+
+.opacity-0 {
+    opacity: 0;
+}

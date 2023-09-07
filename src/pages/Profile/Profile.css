@@ -1,49 +1,44 @@
-.svg{
-    position: absolute;
-    top: 256px;
-}
-main{
-    display: flex;
-    justify-content: space-evenly;
-    padding: 2rem 0;
-}
-
-.nombre{
-    font-size: 22px;
-    text-align: center;
-    font-weight: 600;
-}
-.lista{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 0;
-}
-
-.titulo-formulario{
-    font-weight: 300;
+.titulo-formulario {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-medium);
     margin-bottom: 26px;
     text-align: center;
+}
+
+.formulario {
+    flex: 0.6;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
 }
 
 .grupo{
     display: flex;
     flex-direction: column;
     gap: 6px;
-    margin-bottom:1rem ;
+    margin-bottom: 1rem;
 }
 
-.grupo label{
-    font-size: 20px;
+.grupo label {
+    font-size: var(--text-xl);
     font-weight: 300;
-    color: #6F7789;
+    color: var(--secondary);
 }
 
-.grupo input{
-    width: 330px;
-    height: 50px;
+.grupo input {
+    font-size: var(--text-lg);
+    padding: 12px 14px;
     border-radius: 10px;
-    border: 1px solid #6F7789;
+    border: 1px solid var(--secondary);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.grupo input:focus {
+    border-color: var(--primary);
+    outline: 0;
+    box-shadow: var(--shadow-primary);
 }
 
 .iconos{
@@ -55,7 +50,7 @@ main{
 .icono{
     width: 134px;
     height: 112px;
-    background-color: #D9D9D9;
+    background-color: var(--tertiary);
     border-radius: 12px;
     align-items: center;
     justify-items: center;
@@ -65,17 +60,17 @@ main{
 }
 
 .formulario button {
-    width: 343px;
-    height: 62px;
-    margin-top: 10px;
-    padding: 6px;
+    width: 300px;
+    margin-top: 2rem;
+    /* margin: auto; */
+    padding: 12px;
     font-size: var(--text-md);
     font-weight: var(--font-semibold);
     color: var(--white);
     background-color: var(--primary);
     border: none;
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow-01);
+    box-shadow: var(--shadow-secondary);
     cursor: pointer;
     transition: color .15s ease-in-out;
 }

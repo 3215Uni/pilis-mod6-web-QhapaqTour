@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
-import { Navigation } from './Navigation/Navigation'
+import { Sidebar, Header } from '../components/index'
 
 export const ProtectedRoutes = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext)
@@ -16,8 +16,11 @@ export const ProtectedRoutes = () => {
   return (
     currentUser
       ? <>
-        <Navigation/>
-        <Outlet />
+        <Header/>
+        <div className='container'>
+          <Sidebar />
+          <Outlet />
+        </div>
       </>
       : <Navigate to="/login" />
   )

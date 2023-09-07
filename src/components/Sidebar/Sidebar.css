@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0 6rem;
+}
+
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content {
+    flex: 1.5;
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+}
+
+.nombre{
+    font-size: var(--text-2xl);
+    text-align: center;
+    font-weight: var(--font-semibold);
+    margin-bottom: 20px;
+}
+
+ul li.lista a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    transition: background-color .15s ease-in-out;
+    font-size: var(--text-lg);
+}
+
+ul li.lista a:hover {
+    background-color: var(--tertiary);
+}

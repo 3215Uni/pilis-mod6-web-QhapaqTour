@@ -1,0 +1,106 @@
+.titulo-formulario{
+    font-size: var(--text-2xl);
+    font-weight: var(--font-medium);
+    margin-bottom: 26px;
+    text-align: center;
+}
+
+.grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 1rem;
+}
+
+.grupo label{
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--secondary);
+}
+
+.grupo input{
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--secondary);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.imagen {
+    border-radius: var(--border-radius);
+    border: 1px solid var(--secondary);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    margin-bottom: 1rem;
+}
+
+.imagen label {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 12px 14px;
+    font-size: var(--text-md);
+    color: var(--white);
+    background-color: var(--primary);
+    border: none;
+    border-radius: inherit;
+    cursor: pointer;
+    transition: color .15s ease-in-out;
+}
+
+.imagen input {
+    display: none;
+}
+
+.grupo input:focus, .grupo select:focus {
+    border-color: var(--primary);
+    outline: 0;
+    box-shadow: var(--shadow-primary);
+}
+
+.grupo select {
+    font-size: var(--text-lg);
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--secondary);
+}
+
+.iconos{
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.icono{
+    width: 134px;
+    height: 112px;
+    background-color: var(--tertiary);
+    border-radius: 12px;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.formulario button {
+    width: 300px;
+    /* margin-top: 10px; */
+    padding: 12px;
+    font-size: var(--text-md);
+    font-weight: var(--font-semibold);
+    color: var(--white);
+    background-color: var(--primary);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-secondary);
+    cursor: pointer;
+    transition: color .15s ease-in-out;
+}
+
+.formulario button:hover, .imagen label:hover {
+    color: var(--black);
+}
+
+.message-error{
+    padding: 6px 10px;
+    border-radius: var(--border-radius);
+    color: var(--danger);
+}

@@ -6,7 +6,7 @@ main.container {
     background-size: cover;
 }
 
-.title {
+main.container .title {
     flex-grow: 1;
     height: 100%;
     display: flex;
@@ -15,12 +15,12 @@ main.container {
     position: relative;
 }
 
-.title h1 {
+main.container .title h1 {
     font-size: var(--text-6xl);
     color: var(--white);
 }
 
-.shape {
+main.container .shape {
     height: 100%;
     position: absolute;
     right: 0;
@@ -68,7 +68,7 @@ main.container {
 .form-control:focus {
     border-color: var(--primary);
     outline: 0;
-    box-shadow: var(--shadow-02);
+    box-shadow: var(--shadow-primary);
 }
 
 .form .label-error {
@@ -86,7 +86,7 @@ main.container {
     background-color: var(--primary);
     border: none;
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow-01);
+    box-shadow: var(--shadow-secondary);
     cursor: pointer;
     transition: color .15s ease-in-out;
 }
