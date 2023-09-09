@@ -1,6 +1,9 @@
 .container {
     display: flex;
     justify-content: center;
+}
+
+.padding {
     padding: 2rem 0 6rem;
 }
 

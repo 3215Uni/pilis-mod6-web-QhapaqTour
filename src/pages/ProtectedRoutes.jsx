@@ -17,7 +17,7 @@ export const ProtectedRoutes = () => {
     currentUser
       ? <>
         <Header/>
-        <div className='container'>
+        <div className='container padding'>
           <Sidebar />
           <Outlet />
         </div>
