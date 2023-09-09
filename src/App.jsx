@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Dashboard, Login, Places, Profile, Register } from './pages/index'
 import { ProtectedRoutes } from './pages/ProtectedRoutes'
 import { PublicRoutes } from './pages/PublicRoutes'
+import { Guide } from './pages/Guide/Guide'
 
 function App () {
   return (
@@ -17,6 +18,7 @@ function App () {
             <Route path='dashboard' element={<Dashboard/>}/>
             <Route path='profile' element={<Profile/>}/>
             <Route path='places' element={<Places/>}/>
+            <Route path='guide' element={<Guide/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

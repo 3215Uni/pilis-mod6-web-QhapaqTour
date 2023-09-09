@@ -66,9 +66,10 @@ export const Header = () => {
           >
             <div>
               <h4>{currentUser.username}</h4>
-              <p>Amir Sumaqmi</p>
+              <p>{currentUser.apellido} {currentUser.nombre}</p>
             </div>
             <li><Link to='/profile' onClick={closeDropdown}>Mi perfil</Link></li>
+            <li><Link to='/guide' onClick={closeDropdown}>Datos del guía</Link></li>
             <li>
               <button onClick={handleLogout}>Cerrar sesión</button>
             </li>
