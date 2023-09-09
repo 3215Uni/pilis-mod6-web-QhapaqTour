@@ -70,6 +70,7 @@ export const Header = () => {
             </div>
             <li><Link to='/profile' onClick={closeDropdown}>Mi perfil</Link></li>
             <li><Link to='/guide' onClick={closeDropdown}>Datos del guía</Link></li>
+            <li><Link to='/vehicles' onClick={closeDropdown}>Vehiculo</Link></li>
             <li>
               <button onClick={handleLogout}>Cerrar sesión</button>
             </li>

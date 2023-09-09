@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import './Places.css'
 import { uploadFile } from '../../firebase/config'
 import { createLugar } from '../../services/place'
+import toast from 'react-hot-toast'
 
 export const Places = () => {
   const [file, setFile] = useState(null)
@@ -10,7 +11,7 @@ export const Places = () => {
 
   const onSubmit = async (data) => {
     if (file === null) {
-      console.log('No selecciono imagen')
+      toast.error('No selecciono ninguna imagen')
       return
     }
     const response = await uploadFile(file)

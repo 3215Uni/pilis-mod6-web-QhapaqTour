@@ -3,6 +3,7 @@ import { Dashboard, Login, Places, Profile, Register } from './pages/index'
 import { ProtectedRoutes } from './pages/ProtectedRoutes'
 import { PublicRoutes } from './pages/PublicRoutes'
 import { Guide } from './pages/Guide/Guide'
+import { Vehicles } from './pages/Vehicles/Vehicles'
 
 function App () {
   return (
@@ -19,6 +20,7 @@ function App () {
             <Route path='profile' element={<Profile/>}/>
             <Route path='places' element={<Places/>}/>
             <Route path='guide' element={<Guide/>}/>
+            <Route path='vehicles' element={<Vehicles/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
