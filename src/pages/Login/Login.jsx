@@ -4,22 +4,28 @@ import { useForm } from 'react-hook-form'
 import './Login.css'
 import { login } from '../../services/user'
 import { UserContext } from '../../context/UserContext'
+import toast from 'react-hot-toast'
+import Cookies from 'js-cookie';
 
 export const Login = () => {
   const { setCurrentUser } = useContext(UserContext)
   const { register, handleSubmit, formState: { errors } } = useForm()
-  const [error, setError] = useState(null)
   const navigate = useNavigate()
 
-  const onSubmit = (data, e) => {
-    e.preventDefault()
-    login(data)
-      .then((response) => {
-        localStorage.setItem('token', JSON.stringify(response.token))
-        setCurrentUser(response.token)
-        navigate('/dashboard')
-      })
-      .catch((error) => setError(error))
+  const onSubmit = async (data) => {
+    const response = await login(data);
+    if (!response.user) {
+      toast.error(response.message)
+      return
+    }
+    if (response.user.rol != 'GUIA') {
+      toast.error("No cuenta con los permisos para loggearsew")
+      return      
+    }
+    toast.success(response.message)
+    Cookies.set("token",response.token.token);
+    setCurrentUser(response.user);
+    navigate('/dashboard')
   }
 
   return (
@@ -54,7 +60,6 @@ export const Login = () => {
               placeholder="Contraseña" {...register('password', { required: 'Ingresa tu contraseña' })} />
             </label>
             {errors && <p className='label-error'>{errors.password?.message}</p>}
-            {error && <p className='login-error'>{error.message}</p>}
             <button type='submit'>Ingresar</button>
           </form>
           <p className='create-account'>¿No tienes cuenta? <Link to='/register'>Registrate</Link></p>

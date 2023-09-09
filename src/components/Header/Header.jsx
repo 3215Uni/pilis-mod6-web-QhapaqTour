@@ -2,18 +2,21 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import './header.css'
 import Avatar from '../../assets/avatar.svg'
 import { UserContext } from '../../context/UserContext'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie'
 
 export const Header = () => {
-  const { setCurrentUser } = useContext(UserContext)
+  const { setCurrentUser,currentUser } = useContext(UserContext)
   const [isOpen, setIsOpen] = useState(false)
   const buttonRef = useRef(null)
   const dropdownRef = useRef(null)
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     closeDropdown()
-    localStorage.removeItem('token')
+    Cookies.remove('token')
     setCurrentUser(null)
+    navigate('/login');
   }
 
   const closeDropdown = () => setIsOpen(false)
@@ -62,7 +65,7 @@ export const Header = () => {
             className={`dropdown ${isOpen ? 'opacity-1' : 'opacity-0'}`}
           >
             <div>
-              <h4>Amir</h4>
+              <h4>{currentUser.username}</h4>
               <p>Amir Sumaqmi</p>
             </div>
             <li><Link to='/profile' onClick={closeDropdown}>Mi perfil</Link></li>

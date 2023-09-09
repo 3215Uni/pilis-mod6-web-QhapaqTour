@@ -1,0 +1,76 @@
+.registrarme {
+    background-image: url('../../assets/background.jpg');
+    height: auto;
+    background-size: cover;
+}
+
+.titulo {
+    display: flex;
+    width: 382px;
+    height: 90px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: Manjari;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 73px;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-formulario {
+    display: flex;
+    width: 195.727px;
+    height: 40px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.45px;
+}
+
+.registro-input{
+    width: 343px;
+    border-radius: 16px;
+    height: 50px;
+    border: 1px solid black;
+    background: #FFF;
+    flex-shrink: 0;
+
+}
+
+.registro-input::placeholder{
+    color: rgba(0, 0, 0, 0.50);
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+padding-left: 16px;
+}
+
+.registro-input:focus{
+    border-color: var(--primary);
+    outline: 0;
+    box-shadow: var(--shadow-primary);
+}
+
+.error-mensaje{
+    padding: 6px 10px;
+    border-radius: var(--border-radius);
+    color: #fffffff2;
+}
