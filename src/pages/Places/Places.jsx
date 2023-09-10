@@ -4,10 +4,12 @@ import './Places.css'
 import { uploadFile } from '../../firebase/config'
 import { createLugar } from '../../services/place'
 import toast from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
 export const Places = () => {
   const [file, setFile] = useState(null)
   const { register, handleSubmit, formState: { errors } } = useForm()
+  const navigation = useNavigate();
 
   const onSubmit = async (data) => {
     if (file === null) {
@@ -16,7 +18,13 @@ export const Places = () => {
     }
     const response = await uploadFile(file)
     const datos = { ...data, url: response.metadata.fullPath }
-    createLugar(datos)
+    const resp = await createLugar(datos)
+    if (resp.status == 200) {
+      toast.success('Lugar creado con exito!!!');
+      navigation('/dashboard');
+      return
+    }
+    toast.error(resp.message)
   }
 
   return (
@@ -27,42 +35,42 @@ export const Places = () => {
           <div className='grupo'>
             <label htmlFor="nombre">Nombre</label>
             <input type="text" id='nombre'
-                                {...register('nombre', { required: 'El campo nombre es requerido' })}
-                            />
+              {...register('nombre', { required: 'El campo nombre es requerido' })}
+            />
             {errors && <p className='message-error'>{errors.nombre?.message}</p>}
           </div>
           <div className='grupo'>
             <label htmlFor="latitud">Latitud</label>
             <input type="text" id='latitud'
-                                {...register('latitud', { required: 'El campo latitud es requerido' })}
-                            />
+              {...register('latitud', { required: 'El campo latitud es requerido' })}
+            />
             {errors && <p className='message-error'>{errors.latitud?.message}</p>}
           </div>
           <div className='grupo'>
             <label htmlFor="longitud">Longitud</label>
             <input type="text" id='longitud'
-                                {...register('longitud', { required: 'El campo longitud es requerido' })}
-                            />
+              {...register('longitud', { required: 'El campo longitud es requerido' })}
+            />
             {errors && <p className='message-error'>{errors.longitud?.message}</p>}
           </div>
           <div className='grupo'>
             <label htmlFor="localidad">Localidad</label>
             <input type="text" id='localidad'
-                                {...register('localidad', { required: 'El campo localidad es requerido' })}
-                            />
+              {...register('localidad', { required: 'El campo localidad es requerido' })}
+            />
             {errors && <p className='message-error'>{errors.longitud?.message}</p>}
           </div>
           <div className='grupo'>
-            <label htmlFor="regiones">Regiones</label>
+            <label htmlFor="region">Regiones</label>
             <select
-                            {...register('regiones', { required: 'El campo regiones es requerido' })}
-                            >
+              {...register('region', { required: 'El campo region es requerido' })}
+            >
               <option value="PUNA">Puna</option>
               <option value="QUEBRADA">Quebrada</option>
-              <option value="VALLE">Valle</option>
-              <option value="YUNGA">Yunga</option>
+              <option value="VALLES">Valle</option>
+              <option value="YUNGAS">Yunga</option>
             </select>
-            {errors && <p className='message-error'>{errors.regiones?.message}</p>}
+            {errors && <p className='message-error'>{errors.region?.message}</p>}
           </div>
           <div className='imagen'>
             <label>

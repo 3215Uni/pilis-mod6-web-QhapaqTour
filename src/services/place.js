@@ -9,9 +9,19 @@ export const createLugar = async (data) => {
             },
             body: JSON.stringify(data)
         });
-        const dato = await response.json();
-        console.log(dato);
+        return response
     } catch (error) {
-        console.log(error)
+        return error
+    }
+}
+
+export const getLugares = async () => {
+    try {
+        const response = await fetch(`${PATH_URL}`,{
+            method: 'GET'
+        });
+        return await response.json();
+    } catch (error) {
+        return error;
     }
 }

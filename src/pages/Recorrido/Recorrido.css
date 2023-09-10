@@ -1,0 +1,18 @@
+.button-recorrido {
+    width: 300px;
+    /* margin-top: 10px; */
+    padding: 12px;
+    font-size: var(--text-md);
+    font-weight: var(--font-semibold);
+    color: var(--white);
+    background-color: var(--primary);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-secondary);
+    cursor: pointer;
+    transition: color .15s ease-in-out;
+}
+
+.button-recorrido:hover, .imagen label:hover {
+    color: var(--black);
+}

@@ -12,7 +12,6 @@ export const Dashboard = () => {
     }
     fetchUser()
   }, [])
-  console.log(users);
   return (
     <main className="main-content">
       <div className="datos-personales">

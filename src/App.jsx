@@ -4,6 +4,7 @@ import { ProtectedRoutes } from './pages/ProtectedRoutes'
 import { PublicRoutes } from './pages/PublicRoutes'
 import { Guide } from './pages/Guide/Guide'
 import { Vehicles } from './pages/Vehicles/Vehicles'
+import { Recorrido } from './pages/Recorrido/Recorrido'
 
 function App () {
   return (
@@ -21,6 +22,7 @@ function App () {
             <Route path='places' element={<Places/>}/>
             <Route path='guide' element={<Guide/>}/>
             <Route path='vehicles' element={<Vehicles/>}/>
+            <Route path='recorrido' element={<Recorrido/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

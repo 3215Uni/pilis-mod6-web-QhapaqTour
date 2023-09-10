@@ -27,7 +27,7 @@ export const Sidebar = () => {
             </Link>
           </li>
           <li className='lista'>
-            <Link to='/profile'>
+            <Link to='/recorrido'>
               <FaRoute />
               Gestionar Recorrido
             </Link>
