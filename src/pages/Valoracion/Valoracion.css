@@ -1,0 +1,58 @@
+.contenedora{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.card{    
+    width: 520px;
+    height: auto;
+    border: 1px #00000030 solid;
+    box-shadow: rgba(0, 0, 0, 0.11) 0 15px 30px 0px, rgba(0, 0, 0, 0.08) 0 5px 15px 0 !important;
+}
+
+.card-title{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem; 
+}
+
+.card-content{
+    justify-content: center;
+    display: flex;
+}
+
+.card-footer{
+    align-items: self-end;
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem;
+}
+
+.card-title-titulo{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 25px;
+}
+
+.card-title-fecha{
+    font-size: 13px;
+    font-weight: 300;
+    font-family: system-ui;
+}
+
+.card-content p{
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 60px;
+    color: darkgray;
+}
+
+.card-footer p{
+    font-size: 14px; 
+    font-weight: 800;
+}
+
+.card-footer .valoracion{
+    color: #efb810 ;
+    font-size: 22px;
+}

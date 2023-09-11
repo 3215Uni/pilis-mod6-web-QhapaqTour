@@ -12,6 +12,7 @@ export const Dashboard = () => {
     }
     fetchUser()
   }, [])
+  console.log(users);
   return (
     <main className="main-content">
       <div className="datos-personales">
@@ -23,17 +24,25 @@ export const Dashboard = () => {
       </div>
       <div className="datos-personales">
         <h2>Datos del guia</h2>
-        <p>Carnet: {users?.guia.carnet}</p>
-        <p>Cedula: {users?.guia.cedula}</p>
-        <p>Licencia: {users?.guia.licencia}</p>
+        {
+          users?.guia == null ? <h5>No tiene datos</h5> :
+          <>
+            <p>Carnet: {users?.guia.carnet}</p>
+            <p>Cedula: {users?.guia.cedula}</p>
+            <p>Licencia: {users?.guia.licencia}</p>
+          </>
+        }
       </div>
       <div className="datos-personales">
         <h2>Vehiculos</h2>
-        {users?.vehiculos.map((vehiculo) => (
-          <li key={vehiculo.id}>
-            Asientos: {vehiculo.asientos}, Tipo: {vehiculo.tipo}
-          </li>
-        ))}
+        {
+          users?.vehiculos.length == 0 ? <h5>No tiene vehiculos</h5> :
+          users?.vehiculos.map((vehiculo) => (
+            <li key={vehiculo.id}>
+              Asientos: {vehiculo.asientos}, Tipo: {vehiculo.tipo}
+            </li>
+          ))
+        }
       </div>
     </main>
   )

@@ -33,7 +33,7 @@ export const Sidebar = () => {
             </Link>
           </li>
           <li className='lista'>
-            <Link to='/places'>
+            <Link to='/valoracion'>
               <BsFillStarFill />
               Valoraciones
             </Link>

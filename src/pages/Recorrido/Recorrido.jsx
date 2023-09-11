@@ -53,9 +53,9 @@ export const Recorrido = () => {
             {errors && <p className='message-error'>{errors.cantidadPersonas?.message}</p>}
           </div>
           <div className='grupo'>
-            <label htmlFor="region">Regiones</label>
+            <label htmlFor="lugar">Seleccionar lugar</label>
             <select
-              {...register('region', { required: 'El campo region es requerido' })}
+              {...register('lugar', { required: 'El campo lugar es requerido' })}
             >
                 {
                     places?.map(lugar => (
