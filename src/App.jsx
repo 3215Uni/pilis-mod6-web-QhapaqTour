@@ -6,6 +6,7 @@ import { Guide } from './pages/Guide/Guide'
 import { Vehicles } from './pages/Vehicles/Vehicles'
 import { Recorrido } from './pages/Recorrido/Recorrido'
 import { Valoracion } from './pages/Valoracion/Valoracion'
+import { Reservas } from './pages/Reservas/Reservas'
 
 function App () {
   return (
@@ -25,6 +26,7 @@ function App () {
             <Route path='vehicles' element={<Vehicles/>}/>
             <Route path='recorrido' element={<Recorrido/>}/>
             <Route path='valoracion' element={<Valoracion/>}/>
+            <Route path='reservas' element={<Reservas/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

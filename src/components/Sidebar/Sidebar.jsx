@@ -21,7 +21,7 @@ export const Sidebar = () => {
             </Link>
           </li>
           <li className='lista'>
-            <Link to='/dashboard'>
+            <Link to='/reservas'>
               <BsCalendar2Fill />
               Gestionar Reservas
             </Link>
