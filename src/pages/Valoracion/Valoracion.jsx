@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Valoracion.css';
 import Cookies from 'js-cookie';
 import { calisificacionGuia } from '../../services/calisificacion';
-import { MdStarBorder } from 'react-icons/md'
+import { MdStarBorder,MdStarOutline,MdStar } from 'react-icons/md'
 export const Valoracion = () => {
     const cookie = Cookies.get();
     const [calisificacion, setCalisificacion] = useState(null);
@@ -32,10 +32,15 @@ export const Valoracion = () => {
                         </div>
                         <div className="card-footer">
                             <p>Lugar: {clas.lugar}</p>
-                            <p className='valoracion'>{Array.from({ length: clas.nota }, (_, index) => (
-                                <MdStarBorder key={index} />
-                            ))
-                            }</p>
+                            <p className='valoracion'>{Array.from({ length: 5 }, (_, index) => {
+                                if (index < clas.nota) {
+                                    return <MdStar key={index} />
+                                } else {
+                                    return <MdStarBorder key={index} />
+                                }
+
+                            })
+                        }</p>
                         </div>
 
                     </div>

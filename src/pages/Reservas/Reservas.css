@@ -33,3 +33,18 @@
     font-size: 12px;
     font-weight: 300;
 }
+
+.boton-eliminar-reservas{
+    background: transparent;
+    border: 1px solid red;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all .2s ease-in-out;
+}
+
+.boton-eliminar-reservas:hover{
+    color: white;
+    background-color: red;
+}

@@ -1,4 +1,5 @@
 const PATH_API = 'http://localhost:3000/api/guia/reservas';
+const PATH_DELETE = 'http://localhost:3000/api/reservas';
 
 export const getReservasGuia = async (token) => {
     try {
@@ -9,6 +10,17 @@ export const getReservasGuia = async (token) => {
             }
         });
         return await response.json();
+    } catch (error) {
+        return error;
+    }
+}
+
+export const deleteReservasGuia = async (id) => {
+    try {
+        const response = fetch(`${PATH_DELETE}/${id}`,{
+            method: 'DELETE'
+        });
+        return await response;
     } catch (error) {
         return error;
     }

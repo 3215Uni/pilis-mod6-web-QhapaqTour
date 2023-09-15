@@ -55,8 +55,9 @@ export const Header = () => {
           <button ref={buttonRef} onClick={handleDropdown} className='button-user'>
             <img
               className='image-avatar'
-              src={Avatar}
+              src='https://i.pravatar.cc/'
               alt='avatar'
+              style={{borderRadius: '50%'}}
             />
           </button>
           <ul
