@@ -6,17 +6,17 @@ import { Link, useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 export const Header = () => {
-  const { setCurrentUser,currentUser } = useContext(UserContext)
+  const { setCurrentUser, currentUser } = useContext(UserContext)
   const [isOpen, setIsOpen] = useState(false)
   const buttonRef = useRef(null)
   const dropdownRef = useRef(null)
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const handleLogout = () => {
     closeDropdown()
     Cookies.remove('token')
     setCurrentUser(null)
-    navigate('/login');
+    navigate('/login')
   }
 
   const closeDropdown = () => setIsOpen(false)
@@ -55,7 +55,7 @@ export const Header = () => {
           <button ref={buttonRef} onClick={handleDropdown} className='button-user'>
             <img
               className='image-avatar'
-              src={Avatar}
+              src={`https://ui-avatars.com/api/?name=${currentUser.nombre}+${currentUser.apellido}`}
               alt='avatar'
             />
           </button>
