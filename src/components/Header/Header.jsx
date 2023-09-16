@@ -1,22 +1,21 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import './header.css'
-import Avatar from '../../assets/avatar.svg'
 import { UserContext } from '../../context/UserContext'
 import { Link, useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 export const Header = () => {
-  const { setCurrentUser,currentUser } = useContext(UserContext)
+  const { setCurrentUser, currentUser } = useContext(UserContext)
   const [isOpen, setIsOpen] = useState(false)
   const buttonRef = useRef(null)
   const dropdownRef = useRef(null)
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const handleLogout = () => {
     closeDropdown()
     Cookies.remove('token')
     setCurrentUser(null)
-    navigate('/login');
+    navigate('/login')
   }
 
   const closeDropdown = () => setIsOpen(false)
@@ -57,7 +56,6 @@ export const Header = () => {
               className='image-avatar'
               src='https://i.pravatar.cc/'
               alt='avatar'
-              style={{borderRadius: '50%'}}
             />
           </button>
           <ul

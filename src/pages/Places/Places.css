@@ -90,7 +90,6 @@
     background-color: var(--primary);
     border: none;
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow-secondary);
     cursor: pointer;
     transition: color .15s ease-in-out;
 }

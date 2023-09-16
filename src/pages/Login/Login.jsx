@@ -1,11 +1,11 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import './Login.css'
 import { login } from '../../services/user'
 import { UserContext } from '../../context/UserContext'
 import toast from 'react-hot-toast'
-import Cookies from 'js-cookie';
+import Cookies from 'js-cookie'
 
 export const Login = () => {
   const { setCurrentUser } = useContext(UserContext)
@@ -13,18 +13,18 @@ export const Login = () => {
   const navigate = useNavigate()
 
   const onSubmit = async (data) => {
-    const response = await login(data);
+    const response = await login(data)
     if (!response.user) {
       toast.error(response.message)
       return
     }
-    if (response.user.rol != 'GUIA') {
-      toast.error("No cuenta con los permisos para loggearsew")
-      return      
+    if (response.user.rol !== 'GUIA') {
+      toast.error('No cuenta con los permisos para ingresar')
+      return
     }
     toast.success(response.message)
-    Cookies.set("token",response.token.token);
-    setCurrentUser(response.user);
+    Cookies.set('token', response.token.token)
+    setCurrentUser(response.user)
     navigate('/dashboard')
   }
 

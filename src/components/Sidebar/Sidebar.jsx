@@ -1,9 +1,7 @@
 import React, { useContext } from 'react'
-import { BsFillPersonFill,BsFillStarFill,BsCalendar2Fill } from 'react-icons/bs'
-import { FaMoneyBill,FaRoute,FaMapSigns } from 'react-icons/fa'
-import { GrSettingsOption } from 'react-icons/gr'
-import { IoMdInformationCircle } from 'react-icons/io'
-import { Link } from 'react-router-dom'
+import { BsFillStarFill, BsCalendar2Fill } from 'react-icons/bs'
+import { FaRoute, FaMapSigns } from 'react-icons/fa'
+import { Link, NavLink } from 'react-router-dom'
 import { UserContext } from '../../context/UserContext'
 import './Sidebar.css'
 
@@ -15,28 +13,28 @@ export const Sidebar = () => {
       <nav>
         <ul>
           <li className='lista'>
-            <Link to='/places'>
+            <NavLink to='/places' className={({ isActive }) => isActive ? 'active' : ''}>
               <FaMapSigns />
               Gestionar Lugares
-            </Link>
+            </NavLink>
           </li>
           <li className='lista'>
-            <Link to='/reservas'>
+            <NavLink to='/reservas' className={({ isActive }) => isActive ? 'active' : ''}>
               <BsCalendar2Fill />
               Gestionar Reservas
-            </Link>
+            </NavLink>
           </li>
           <li className='lista'>
-            <Link to='/recorrido'>
+            <NavLink to='/recorrido' className={({ isActive }) => isActive ? 'active' : ''}>
               <FaRoute />
-              Gestionar Recorrido
-            </Link>
+              Gestionar Recorridos
+            </NavLink>
           </li>
           <li className='lista'>
-            <Link to='/valoracion'>
+            <NavLink to='/valoracion' className={({ isActive }) => isActive ? 'active' : ''}>
               <BsFillStarFill />
               Valoraciones
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom'
 export const Places = () => {
   const [file, setFile] = useState(null)
   const { register, handleSubmit, formState: { errors } } = useForm()
-  const navigation = useNavigate();
+  const navigation = useNavigate()
 
   const onSubmit = async (data) => {
     if (file === null) {
@@ -19,9 +19,9 @@ export const Places = () => {
     const response = await uploadFile(file)
     const datos = { ...data, url: response.metadata.fullPath }
     const resp = await createLugar(datos)
-    if (resp.status == 200) {
-      toast.success('Lugar creado con exito!!!');
-      navigation('/dashboard');
+    if (resp.status === 200) {
+      toast.success('Lugar creado con exito!!!')
+      navigation('/dashboard')
       return
     }
     toast.error(resp.message)
@@ -67,8 +67,8 @@ export const Places = () => {
             >
               <option value="PUNA">Puna</option>
               <option value="QUEBRADA">Quebrada</option>
-              <option value="VALLES">Valle</option>
-              <option value="YUNGAS">Yunga</option>
+              <option value="VALLES">Valles</option>
+              <option value="YUNGAS">Yungas</option>
             </select>
             {errors && <p className='message-error'>{errors.region?.message}</p>}
           </div>

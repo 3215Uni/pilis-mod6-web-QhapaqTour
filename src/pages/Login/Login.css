@@ -62,6 +62,7 @@ main.container .shape {
     border: 1px solid var(--secondary);
     border-radius: var(--border-radius);
     padding: 6px 10px;
+    font-size: var(--text-lg);
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
@@ -86,7 +87,6 @@ main.container .shape {
     background-color: var(--primary);
     border: none;
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow-secondary);
     cursor: pointer;
     transition: color .15s ease-in-out;
 }

@@ -42,3 +42,7 @@ ul li.lista a {
 ul li.lista a:hover {
     background-color: var(--tertiary);
 }
+
+.active {
+    background-color: var(--tertiary);
+}
