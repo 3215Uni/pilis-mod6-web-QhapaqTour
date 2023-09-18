@@ -40,7 +40,7 @@ export const Recorrido = () => {
         </div>
         <div className='grupo'>
           <label htmlFor="duracion">Duracion del recorrido</label>
-          <input type="text" id='duracion'
+          <input type="number" id='duracion'
               {...register('duracion', { required: 'El campo duracion es requerido' })}
             />
           {errors && <p className='message-error'>{errors.duracion?.message}</p>}

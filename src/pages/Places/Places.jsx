@@ -17,7 +17,7 @@ export const Places = () => {
       return
     }
     const response = await uploadFile(file)
-    const datos = { ...data, url: response.metadata.fullPath }
+    const datos = { ...data, url: response }
     const resp = await createLugar(datos)
     if (resp.status === 200) {
       toast.success('Lugar creado con exito!!!')
