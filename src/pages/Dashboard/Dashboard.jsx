@@ -1,17 +1,31 @@
 import Cookies from 'js-cookie'
 import { useEffect, useState } from 'react'
+import toast from 'react-hot-toast'
 import { userGuideVehicle } from '../../services/user'
+import { onMessageListener, requestPermission } from '../../firebase/config'
 
 export const Dashboard = () => {
   const cookie = Cookies.get()
   const [users, setUsers] = useState(null)
 
   useEffect(() => {
+    requestPermission()
+
+    const unsubscribe = onMessageListener().then(payload => {
+      console.log(payload)
+
+      toast.success(`${payload?.notification?.title} ${payload?.notification?.body}`)
+    })
+
     const fetchUser = async () => {
       const response = await userGuideVehicle(cookie.token)
       setUsers(response)
     }
     fetchUser()
+
+    return () => {
+      unsubscribe.catch(err => console.log('failed: ', err))
+    }
   }, [])
 
   return (

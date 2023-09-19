@@ -1,11 +1,11 @@
 import { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
+import Cookies from 'js-cookie'
 import './Login.css'
 import { login } from '../../services/user'
 import { UserContext } from '../../context/UserContext'
-import toast from 'react-hot-toast'
-import Cookies from 'js-cookie'
 
 export const Login = () => {
   const { setCurrentUser } = useContext(UserContext)
