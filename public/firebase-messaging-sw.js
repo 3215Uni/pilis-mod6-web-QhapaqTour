@@ -11,7 +11,13 @@ if ('serviceWorker' in navigator) {
 }
 
 firebase.initializeApp({
-  messagingSenderId: '153862338959'
+  apiKey: 'AIzaSyA25oW7SjFjkiXCZBqhsXFlBX-L8HjXQyo',
+  authDomain: 'qhapaqtour-be7e8.firebaseapp.com',
+  projectId: 'qhapaqtour-be7e8',
+  storageBucket: 'qhapaqtour-be7e8.appspot.com',
+  messagingSenderId: '153862338959',
+  appId: '1:153862338959:web:1deaf64ed872fdcbe5f3fa',
+  measurementId: 'G-TZ0BED8FBK'
 })
 
 const messaging = firebase.messaging()

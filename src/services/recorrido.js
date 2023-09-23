@@ -1,4 +1,6 @@
-const PATH_RECORRIDO = 'http://localhost:3000/api/recorridos'
+import { api } from './api'
+
+const PATH_RECORRIDO = `${api.server}/recorridos`
 
 export const createRecorrido = async (data, token) => {
   try {

@@ -1,15 +1,18 @@
 import Cookies from 'js-cookie'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import { userGuideVehicle } from '../../services/user'
 import { onMessageListener, requestPermission } from '../../firebase/config'
+import { UserContext } from '../../context/UserContext'
 
 export const Dashboard = () => {
   const cookie = Cookies.get()
-  const [users, setUsers] = useState(null)
+  const { currentUser } = useContext(UserContext)
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
-    requestPermission()
+    const data = { user: currentUser, token: cookie.token }
+    requestPermission(data)
 
     const unsubscribe = onMessageListener().then(payload => {
       console.log(payload)
@@ -19,7 +22,7 @@ export const Dashboard = () => {
 
     const fetchUser = async () => {
       const response = await userGuideVehicle(cookie.token)
-      setUsers(response)
+      setUser(response)
     }
     fetchUser()
 
@@ -32,29 +35,29 @@ export const Dashboard = () => {
     <main className="main-content">
       <div className="datos-personales">
         <h2>Datos Personales</h2>
-        <p>Nombre: {users?.nombre}</p>
-        <p>Apellido: {users?.apellido}</p>
-        <p>Email: {users?.email}</p>
-        <p>D.N.I.: {users?.dni}</p>
+        <p>Nombre: {user?.nombre}</p>
+        <p>Apellido: {user?.apellido}</p>
+        <p>Email: {user?.email}</p>
+        <p>D.N.I.: {user?.dni}</p>
       </div>
       <div className="datos-personales">
         <h2>Datos del guia</h2>
         {
-          users?.guia == null
+          user?.guia == null
             ? <h5>No tiene datos</h5>
             : <>
-              <p>Carnet: {users?.guia.carnet}</p>
-              <p>Cedula: {users?.guia.cedula}</p>
-              <p>Licencia: {users?.guia.licencia}</p>
+              <p>Carnet: {user?.guia.carnet}</p>
+              <p>Cedula: {user?.guia.cedula}</p>
+              <p>Licencia: {user?.guia.licencia}</p>
             </>
         }
       </div>
       <div className="datos-personales">
         <h2>Vehiculos</h2>
         {
-          users?.vehiculos.length === 0
+          user?.vehiculos.length === 0
             ? <h5>No tiene vehiculos</h5>
-            : users?.vehiculos.map((vehiculo) => (
+            : user?.vehiculos.map((vehiculo) => (
               <li key={vehiculo.id}>
                 Asientos: {vehiculo.asientos}, Tipo: {vehiculo.tipo}
               </li>
