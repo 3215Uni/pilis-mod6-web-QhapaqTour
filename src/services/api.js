@@ -1,3 +1,3 @@
 export const api = {
-  server: 'http://localhost:3000/api'
+  server: 'https://api-qhapaqtour.onrender.com/api'
 }
